@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -13,4 +15,12 @@ func main() {
 	input, _ := reader.ReadString('\n')
 	fmt.Println("You entered:", input)
 
+	fmt.Print("Enter a number: ")
+	numinput, _ := reader.ReadString('\n')
+	aFloat, err := strconv.ParseFloat(strings.TrimSpace(numinput), 32)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("You entered:", aFloat)
+	}
 }
